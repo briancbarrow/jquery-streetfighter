@@ -19,6 +19,10 @@ main {
 	height: 494px;
 }
 
+.ryu-standing {
+	display: none;
+}
+
 .ryu-ready {
 	display: none;
 }
@@ -56,11 +60,12 @@ main {
 }
 
 .hadouken {
-	background-image: url('../images.hadouken.gif');
 	width: 156px;
 	height: 90px;
 	display: none;
 	float: left;
 	position: absolute;
 	z-index: 10;
+	right: 625px;
+	top: 175px;
 }
