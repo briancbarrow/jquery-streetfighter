@@ -55,3 +55,12 @@ main {
 	display: none;
 }
 
+.hadouken {
+	background-image: url('../images.hadouken.gif');
+	width: 156px;
+	height: 90px;
+	display: none;
+	float: left;
+	position: absolute;
+	z-index: 10;
+}
