@@ -1,0 +1,57 @@
+body {
+	background-color: black;
+	padding-bottom: -150px;
+}
+
+main {
+	height: 500px;
+	min-width: 1200px;
+	background-color: white;
+	margin-top: 110px;
+	position: relative;
+	z-index: 1;
+}
+
+.img-container {
+	margin-left: 100px;
+	float: left;
+	width: 659px;
+	height: 494px;
+}
+
+.ryu-ready {
+	display: none;
+}
+
+.ryu-throwing {
+	display: none;
+}
+
+.ryu-cool {
+	display: none;
+}
+
+.click-instructions {
+	font-family: 'Permanent Marker', cursive;
+	color: black;
+	width: 245px;
+	margin: auto;
+	position: absolute;
+	top: 75px;
+	right: 400px;
+	font-size: 25px;
+	display: none;
+}
+
+.x-instructions {
+	font-family: 'Permanent Marker', cursive;
+	color: black;
+	width: 245px;
+	margin: auto;
+	position: absolute;
+	top: 200px;
+	right: 150px;
+	font-size: 25px;
+	display: none;
+}
+
