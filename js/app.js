@@ -1,4 +1,4 @@
-var hadoukenAudio = new Audio('./sound/hadouken.mp3');
+// var hadoukenAudio = new Audio('./sound/hadouken.mp3');
 
 $(document).ready( function() {
 	$('.ryu-standing').show();
@@ -14,14 +14,19 @@ $(document).ready( function() {
 		$('.ryu-standing').show();
 		$('.ryu-ready').hide();
 	})
-
-	// Ryu throwing hadouken on click
-	$('.img-container').mousedown( function() {
-		hadoukenAudio.play();
+	.mousedown( function() {
+		// hadoukenAudio.play();
+		playHadouken();
 		$('.ryu-standing').hide();
 		$('.ryu-ready').hide();
 		$('.ryu-throwing').show();
-		$('.hadouken').show();	
+		$('.hadouken').finish().show()
+			.animate({
+				"right": "0px",			
+			}, 500, function() {
+				$('.hadouken').hide();
+				$('.hadouken').css('right', '625px');
+			});	
 	})
 	.mouseup( function() {
 		$('.ryu-standing').show();
@@ -39,3 +44,9 @@ $(document).ready( function() {
 	// Ryu cool position on 'x' button
 
 });
+
+function playHadouken () {
+  $('#hadouken-sound')[0].volume = 0.5;
+  $('#hadouken-sound')[0].load();
+  $('#hadouken-sound')[0].play();
+}
