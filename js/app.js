@@ -8,12 +8,16 @@ $(document).ready( function() {
 
 	// Ryu ready on hover
 	$('.img-container').mouseenter( function() {
-		$('.ryu-standing').hide();
-		$('.ryu-ready').show();
+		if(down === false && click === false) {
+			$('.ryu-standing').hide();
+			$('.ryu-ready').show();
+		}
 	})
 	.mouseleave( function() {
-		$('.ryu-standing').show();
-		$('.ryu-ready').hide();
+		if(down === false && click === false) {
+			$('.ryu-standing').show();
+			$('.ryu-ready').hide();
+		}
 	})
 	.mousedown( function() {
 		if(down === false) {
