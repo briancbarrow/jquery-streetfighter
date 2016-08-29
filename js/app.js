@@ -97,7 +97,7 @@ function stopTheme() {
 }
 
 function sflogoFade() {
-	$('.sf-logo').fadeIn(1000, function() {
+	$('.sf-logo').fadeIn(2000, function() {
 		$('.sf-logo').fadeOut(1000, function() {
 			broughtToYou();
 		});
