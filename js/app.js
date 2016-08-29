@@ -1,10 +1,10 @@
 var down = false;
+var click = false;
 
 $(document).ready( function() {
 	playTheme();
 	$('.ryu-standing').show();
-	$('.click-instructions').fadeIn(1000);
-	$('.x-instructions').fadeIn(1000);
+	sflogoFade();
 
 	// Ryu ready on hover
 	$('.img-container').mouseenter( function() {
@@ -16,26 +16,32 @@ $(document).ready( function() {
 		$('.ryu-ready').hide();
 	})
 	.mousedown( function() {
-		playHadouken();
-		$('.ryu-standing').hide();
-		$('.ryu-ready').hide();
-		$('.ryu-throwing').show();
-		$('.hadouken').finish().show()
-			.animate({
-				"right": "0px",			
-			}, 500, function() {
-				$('.hadouken').hide();
-				$('.hadouken').css('right', '625px');
-			});	
+		if(down === false) {
+			click = true;
+			playHadouken();
+			$('.ryu-standing').hide();
+			$('.ryu-ready').hide();
+			$('.ryu-throwing').show();
+			$('.hadouken').finish().show()
+				.animate({
+					"right": "0px",			
+				}, 500, function() {
+					$('.hadouken').hide();
+					$('.hadouken').css('right', '625px');
+				});	
+		}
 	})
 	.mouseup( function() {
-		$('.ryu-standing').show();
-		$('.ryu-ready').hide();
-		$('.ryu-throwing').hide();
+		if(down === false) {
+			click = false;
+			$('.ryu-standing').show();
+			$('.ryu-ready').hide();
+			$('.ryu-throwing').hide();
+		}
 	});
 	// Ryu cool position on 'x' button
 	$(window).keydown(function(event) {
-		if(down === false) {
+		if(down === false && click === false) {			
 			down = true;
 			if(event.which === 88) {
 				stopTheme();
@@ -89,3 +95,32 @@ function stopTheme() {
 	$('#theme-sound')[0].pause();
 	$('#theme-sound')[0].load();
 }
+
+function sflogoFade() {
+	$('.sf-logo').fadeIn(1000, function() {
+		$('.sf-logo').fadeOut(1000, function() {
+			broughtToYou();
+		});
+	})			
+};
+
+function jqueryFade() {
+	$('.jquery-logo').fadeIn(1000, function() {
+		$('.jquery-logo').fadeOut(1000, function() {
+			instructionFade();
+		});
+	})
+};
+
+function broughtToYou() {
+	$('.brought-to-you').fadeIn(1000, function() {
+		$('.brought-to-you').fadeOut(1000, function() {
+			jqueryFade();
+		});
+	})
+};
+
+function instructionFade() {
+	$('.click-instructions').fadeIn(1000);
+	$('.x-instructions').fadeIn(1000);
+};

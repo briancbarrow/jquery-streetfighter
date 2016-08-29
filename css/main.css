@@ -42,7 +42,7 @@ main {
 	margin: auto;
 	position: absolute;
 	top: 75px;
-	right: 400px;
+	right: 420px;
 	font-size: 25px;
 	display: none;
 }
@@ -50,12 +50,42 @@ main {
 .x-instructions {
 	font-family: 'Permanent Marker', cursive;
 	color: black;
-	width: 245px;
+	width: 290px;
 	margin: auto;
 	position: absolute;
 	top: 200px;
 	right: 150px;
 	font-size: 25px;
+	display: none;
+}
+
+.brought-to-you {
+	font-family: 'Permanent Marker', cursive;
+	color: black;
+	width: 700px;
+	margin: auto;
+	position: absolute;
+	top: 175px;
+	right: 20px;
+	font-size: 50px;
+	display: none;
+}
+
+.sf-logo {
+	width: 682px;
+	margin: auto;
+	position: absolute;
+	top: 50px;
+	right: 50px;
+	display: none;
+}
+
+.jquery-logo {
+	width: 500px;
+	margin: auto;
+	position: absolute;
+	top: 130px;
+	right: 125px;
 	display: none;
 }
 
